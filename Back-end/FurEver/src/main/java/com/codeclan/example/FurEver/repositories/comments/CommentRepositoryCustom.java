@@ -1,4 +1,6 @@
 package com.codeclan.example.FurEver.repositories.comments;
 
-public interface CommentRepositoryCustom {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CommentRepositoryCustom{
 }

@@ -22,19 +22,26 @@ public class Message {
     @Column(name = "recipientId")
     private Long recipientId;
 
-    // Not sure bout this...
+
     @ManyToOne
     @JoinColumn(name = "owner_id", nullable = false)
     private Owner owner;
 
-    public Message(String txtMessage) {
-        this.id = id;
+    public Message(String txtMessage, Owner owner) {
         this.txtMessage = txtMessage;
-//        this.owner = owner;
+        this.owner = owner;
     }
 
     public Message(){
 
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
     public Long getId() {
@@ -69,11 +76,4 @@ public class Message {
         this.recipientId = recipientId;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
 }

@@ -42,7 +42,7 @@ public class Dog {
     private List<Comment> comments;
 
     public Dog(String name, BreedType breed, String gender, int age, String picture, String description, Owner owner) {
-        this.id = id;
+//        this.id = id;
         this.name = name;
         this.breed = breed;
         this.gender= gender;

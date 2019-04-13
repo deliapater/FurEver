@@ -1,4 +1,7 @@
 package com.codeclan.example.FurEver.repositories.owners;
 
-public class OwnerRepository {
+import com.codeclan.example.FurEver.models.Owner;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OwnerRepository extends JpaRepository<Owner, Long>, OwnerRepositoryCustom {
 }

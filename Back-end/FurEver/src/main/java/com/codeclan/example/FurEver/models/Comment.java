@@ -18,7 +18,6 @@ public class Comment {
     private Dog dog;
 
     public Comment(String text) {
-        this.id = id;
         this.text = text;
     }
 

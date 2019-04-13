@@ -1,5 +1,6 @@
 package com.codeclan.example.FurEver.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
@@ -24,20 +25,22 @@ public class Owner {
     @Column(name ="location")
     private String location;
 
+    @JsonIgnoreProperties
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
-    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private List<Dog> dogs;
 
+    @JsonIgnoreProperties
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Message> messages;
 
     public Owner(String name, String email, String location) {
-        this.id = id;
         this.name = name;
         this.email = email;
         this.location = location;
         this.dogs = new ArrayList<Dog>();
+        this.messages = new ArrayList<Message>();
     }
 
     public Owner(){
