@@ -26,8 +26,8 @@ Users must be able to contact each other privately via a direct message.
 Users must be able to add a public comment in others users(pets) walls.
 
 ## Extensions
-Add a location map.
-Add a method that allows the user to upload photos to the server.
-Add an Adoptable Pets section.
-The newest members(pets) could be display in the home page carousel.
-Extended for pets of any type.
+Add a location map.<br>
+Add a method that allows the user to upload photos to the server.<br>
+Add an Adoptable Dogs section.<br>
+The newest members(dogs) could be display in the home page carousel.<br>
+Extended for pets of any type.<br>
