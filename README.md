@@ -1,7 +1,7 @@
 # FINAL PROJECT.- Fur Ever<br>
 **Team Project: 3 contributors**
 
-## Intro:
+## Intro
 We have been approached to build an app for dog owners who wish to breed or meet their pets for social activities.  The app should allow users create a profile for their dog(s) and be able to to contact any member of the site.  The app should allow members to leave comments and ratings on other dogs.
 
 ## MVP
