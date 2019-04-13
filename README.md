@@ -29,5 +29,5 @@ Users must be able to add a public comment in others users(pets) walls.
 Add a location map.<br>
 Add a method that allows the user to upload photos to the server.<br>
 Add an Adoptable Dogs section.<br>
-The newest members(pets) could be display in the home page carousel.<br
+The newest members(dogs) could be display in the home page carousel.<br>
 Extended for pets of any type.<br>
