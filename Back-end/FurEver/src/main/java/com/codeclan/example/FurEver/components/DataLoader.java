@@ -1,9 +1,6 @@
 package com.codeclan.example.FurEver.components;
 
-import com.codeclan.example.FurEver.models.BreedType;
-import com.codeclan.example.FurEver.models.Dog;
-import com.codeclan.example.FurEver.models.Message;
-import com.codeclan.example.FurEver.models.Owner;
+import com.codeclan.example.FurEver.models.*;
 import com.codeclan.example.FurEver.repositories.comments.CommentRepository;
 import com.codeclan.example.FurEver.repositories.dogs.DogRepository;
 import com.codeclan.example.FurEver.repositories.messages.MessageRepository;
@@ -53,6 +50,9 @@ public class DataLoader implements ApplicationRunner {
 
         Message message2 = new Message("Hello. This is a test message", owner2);
         messageRepository.save(message2);
+
+        Comment comment1 = new Comment("This is a test comment, lovely dog", dog3);
+        commentRepository.save(comment1);
     }
 
 }
