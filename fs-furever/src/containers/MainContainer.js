@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../NavBar.js';
 import OwnerList from '../components/owners/OwnerList';
 import OwnerDetails from '../components/owners/OwnerDetails';
-import PirateForm from '../components/owners/OwnerForm';
+import OwnerForm from '../components/owners/OwnerForm';
 import Request from '../helpers/request';
 
 class MainContainer extends Component {
@@ -73,11 +73,11 @@ class MainContainer extends Component {
 
       <Route exact path="/owners/:id" render= {(props) => {
         const id = props.match.params.id;
-        const pirate = this.findOwnerById(id);
-        // console.log(owner);
+        const owner = this.findOwnerById(id);
+        console.log(owner);
         return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
       }}/>
-      
+
       </Switch>
       </React.Fragment>
       </Router>
