@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/owners")
 public class OwnerController {
@@ -28,4 +30,10 @@ public class OwnerController {
         ownerRepository.save(owner);
     }
 
+    @PutMapping(value = "/{id}/location/{location}")
+    public List<Owner> getOwnersByLocation(@PathVariable Long id, @PathVariable String location){
+        return ownerRepository.getOwnersByLocation(location);
+    }
+
 }
+
