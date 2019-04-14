@@ -5,5 +5,5 @@ import com.codeclan.example.FurEver.models.Dog;
 import java.util.List;
 
 public interface DogRepositoryCustom {
-    List<Dog> allDogs();
+//    List<Dog> allDogs();
 }

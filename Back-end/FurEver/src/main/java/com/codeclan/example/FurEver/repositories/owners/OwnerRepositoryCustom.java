@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface OwnerRepositoryCustom {
 
-    List<Owner> allOwners();
+  //  List<Owner> allOwners();
 
-    List<Owner> getOwnersByLocation(String location);
+  //  List<Owner> getOwnersByLocation(String location);
 }

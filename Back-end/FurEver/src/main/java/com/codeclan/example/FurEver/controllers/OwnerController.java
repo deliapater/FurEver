@@ -30,10 +30,10 @@ public class OwnerController {
         ownerRepository.save(owner);
     }
 
-    @PutMapping(value = "/{id}/location/{location}")
-    public List<Owner> getOwnersByLocation(@PathVariable Long id, @PathVariable String location){
-        return ownerRepository.getOwnersByLocation(location);
-    }
+//    @PutMapping(value = "/{id}/location/{location}")
+//    public List<Owner> getOwnersByLocation(@PathVariable Long id, @PathVariable String location){
+//        return ownerRepository.getOwnersByLocation(location);
+//    }
 
 }
 
