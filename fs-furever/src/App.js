@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div>
       <MainContainer />
+      <p>For the love of Dog.</p>
       </div>
     );
   }

@@ -33,9 +33,9 @@ class MainContainer extends Component {
     .then(data => {
       this.setState({
         pirates: data[0]._embedded.owners,
-        ships: data[1]._embedded.dogs,
-        raids: data[2]._embedded.messages,
-        raids: data[3]._embedded.comments,
+        dogs: data[1]._embedded.dogs,
+        messages: data[2]._embedded.messages,
+        comments: data[3]._embedded.comments,
       })
     })
   }
