@@ -97,4 +97,12 @@ public class Owner {
 
     public void addOwner(Owner owner) {
     }
+
+    public void addDog(Dog dog){
+        this.dogs.add(dog);
+    }
+
+    public void addMessage(Message message){
+        this.messages.add(message);
+    }
 }
