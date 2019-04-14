@@ -129,4 +129,7 @@ public class Dog {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
+    public void addDog(Dog dog) {
+    }
 }

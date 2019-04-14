@@ -1,9 +1,6 @@
 package com.codeclan.example.FurEver;
 
-import com.codeclan.example.FurEver.models.BreedType;
-import com.codeclan.example.FurEver.models.Dog;
-import com.codeclan.example.FurEver.models.Message;
-import com.codeclan.example.FurEver.models.Owner;
+import com.codeclan.example.FurEver.models.*;
 import com.codeclan.example.FurEver.repositories.comments.CommentRepository;
 import com.codeclan.example.FurEver.repositories.dogs.DogRepository;
 import com.codeclan.example.FurEver.repositories.messages.MessageRepository;
@@ -21,44 +18,56 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest
 public class FurEverApplicationTests {
 
+    @Autowired
+    OwnerRepository ownerRepository;
 
-	@Autowired
-	OwnerRepository ownerRepository;
+    @Autowired
+    DogRepository dogRepository;
 
-	@Autowired
-	DogRepository dogRepository;
+    @Autowired
+    CommentRepository commentRepository;
 
-	@Autowired
-	CommentRepository commentRepository;
+    @Autowired
+    MessageRepository messageRepository;
 
-	@Autowired
-	MessageRepository messageRepository;
+    @Test
+    public void contextLoads() {
+    }
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void canCreateEverythingAndAddToRepository() {
+        assertTrue(messageRepository.count() == 0);
+        assertTrue(dogRepository.count() == 0);
+        assertTrue(ownerRepository.count() == 0);
+        assertTrue(commentRepository.count() == 0);
 
-	@Test
-	public void canCreateOwnerAndDogAndAddToDatabase(){
-		assertTrue(dogRepository.count() == 0);
-		assertTrue(ownerRepository.count() == 0);
+        Owner owner1 = new Owner("Kim Clark", "kim@home.com", "Glasgow");
+        ownerRepository.save(owner1);
 
-		Owner owner1 = new Owner("Kim Clark", "kim@home.com", "Glasgow");
-		ownerRepository.save(owner1);
+        Owner owner2 = new Owner("Delia Paterina", "delia@home.com", "Glasgow");
+        ownerRepository.save(owner2);
 
-		Dog dog1 = new Dog("Kloe", BreedType.AfghanHound, "Male", 3, "picUrl", "I am Kloe, I am a three year old Afghan Hound from Afghanistan", owner1);
-		dogRepository.save(dog1);
+        Dog dog1 = new Dog("Fido", BreedType.Affenpinscher, "Male", 4, "picUrl", "I am Fido, I am a four year old Affenpinscher from Austria", owner1);
+        dogRepository.save(dog1);
+        Dog dog2 = new Dog("Wido", BreedType.AlaskanKleeKai, "Female", 5, "picUrl", "I am Wido, I am a five year old Alaskan KleeKai from Alaska", owner1);
+        dogRepository.save(dog2);
+        Dog dog3 = new Dog("Kloe", BreedType.AfghanHound, "Female", 2, "picUrl", "I am Kloe, I am a two year old Afghan Hound from Afghanistan", owner2);
+        dogRepository.save(dog3);
 
-		Dog dog2 = new Dog("Fido", BreedType.AlaskanKleeKai, "Female", 5, "picUrl", "I am Fido, I am a five year old Alaskan KleeKai from Alaska", owner1);
-		dogRepository.save(dog2);
+        Message message1 = new Message("Hello. This is a test message", owner1);
+        messageRepository.save(message1);
 
-		Message message1 = new Message("Hello.  This is a test message", owner1);
-		messageRepository.save(message1);
-//
-//		assertTrue(dogRepository.count() == 2);
-//		assertTrue(ownerRepository.count() == 1);
+        Message message2 = new Message("Hello. This is a test response", owner2);
+        messageRepository.save(message2);
 
-	}
+        Comment comment1 = new Comment("This is a test comment, lovely dog", dog3);
+        commentRepository.save(comment1);
+
+        assertTrue(commentRepository.count() == 1);
+        assertTrue(messageRepository.count() == 2);
+        assertTrue(ownerRepository.count() == 2);
+        assertTrue(dogRepository.count() == 3);
+    }
 
 }
 

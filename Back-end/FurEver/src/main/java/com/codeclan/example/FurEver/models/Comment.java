@@ -14,10 +14,10 @@ public class Comment {
     private String text;
 
     @ManyToOne
-    @JoinColumn(name = "dog_id", nullable = false)
+    @JoinColumn(name = "dog")
     private Dog dog;
 
-    public Comment(String text) {
+    public Comment(String text, Dog dog) {
         this.text = text;
     }
 

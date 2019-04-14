@@ -94,4 +94,7 @@ public class Owner {
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
+
+    public void addOwner(Owner owner) {
+    }
 }
