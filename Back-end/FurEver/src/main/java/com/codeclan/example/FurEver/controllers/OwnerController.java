@@ -25,7 +25,6 @@ public class OwnerController {
         Owner owner = ownerRepository.getOne(id);
         Dog dog = dogRepository.getOne(dogId);
         owner.addOwner(owner);
-        dog.addDog(dog);
         ownerRepository.save(owner);
     }
 

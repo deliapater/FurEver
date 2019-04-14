@@ -48,4 +48,6 @@ public class Comment {
     public void setDog(Dog dog) {
         this.dog = dog;
     }
+
+
 }

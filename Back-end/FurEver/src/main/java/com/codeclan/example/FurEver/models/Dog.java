@@ -130,6 +130,7 @@ public class Dog {
         this.comments = comments;
     }
 
-    public void addDog(Dog dog) {
+    public void addDog(Comment comment) {
+        this.comments.add(comment);
     }
 }
