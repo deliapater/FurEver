@@ -7,10 +7,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+
       <MainContainer />
-      <p>For the love of Dog.</p>
-      </div>
+      
+
     );
   }
 }

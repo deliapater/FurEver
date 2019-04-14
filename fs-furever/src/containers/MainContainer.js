@@ -77,7 +77,7 @@ class MainContainer extends Component {
         // console.log(owner);
         return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
       }}/>
-
+      
       </Switch>
       </React.Fragment>
       </Router>
