@@ -14,7 +14,6 @@ const Owner = (props) => {
     <Link to = {url} className="name">
     <p>Name: {props.owner.name}</p></Link>
     <p>Email: {props.owner.email}</p>
-    <p>Dogs: {props.owner.dog.name}</p>
     </>
   )
 }

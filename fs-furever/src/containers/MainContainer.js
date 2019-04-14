@@ -32,7 +32,7 @@ class MainContainer extends Component {
     Promise.all(promises)
     .then(data => {
       this.setState({
-        pirates: data[0]._embedded.owners,
+        owners: data[0]._embedded.owners,
         dogs: data[1]._embedded.dogs,
         messages: data[2]._embedded.messages,
         comments: data[3]._embedded.comments,

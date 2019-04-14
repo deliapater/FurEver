@@ -12,6 +12,9 @@ const NavBar = (props) => {
       <li className="ownersLink">
       <Link to="/owners">Owners</Link>
       </li>
+      <li className="dogsLink">
+      <Link to="/dogs">Dogs</Link>
+      </li>
       <li className="messagesLink">
       <Link to="/messages">My Messages</Link>
       </li>

@@ -18,7 +18,7 @@ public class Message {
     @Column(name = "senderId")
     private Long senderId;
 
-    // This will be passed to this field from the getMessageRecipientId() which we will .get() from the dog.GetOwner.get().getId()
+    // This will be passed to this field from the getMessageRecipientId() which we will .get from the dog.GetOwner.get().getId()
     @Column(name = "recipientId")
     private Long recipientId;
 
