@@ -21,7 +21,7 @@ class CommentForm extends React.Component {
     event.preventDefault();
     const request = new Request();
     request.post('/api/comments', this.state).then(() => {
-      window.location = '/dog/:id'
+      window.location = '/dog/{id}'
     })
   }
 
@@ -30,11 +30,13 @@ class CommentForm extends React.Component {
     return (
       <div>
       <form onSubmit = {this.handleSubmit}>
-      <input type ="texterea" placeholder="Add a comment" name="text" onChange={this.handleChange}/>
-      <button type = "submit">Save</button>
+      <textarea  rows="4" cols="50"  placeholder="Add a comment" name="text" onChange={this.handleChange}/>
+      <button type = "submit">Add</button>
       </form>
       </div>
     )
   }
 
 }
+
+export default CommentForm
