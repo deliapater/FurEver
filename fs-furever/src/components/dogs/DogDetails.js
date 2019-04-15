@@ -8,9 +8,6 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
-  console.log(props);
-
-
   return(
 
     <div className="component">

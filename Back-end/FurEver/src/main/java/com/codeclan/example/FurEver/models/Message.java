@@ -13,6 +13,9 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title")
+    private String title;
+
     @Column(name = "txtMessage")
     private String txtMessage;
 
@@ -29,13 +32,22 @@ public class Message {
     @JoinColumn(name = "owner_id", nullable = false)
     private Owner owner;
 
-    public Message(String txtMessage, Owner owner) {
+    public Message(String title, String txtMessage, Owner owner) {
+        this.title = title;
         this.txtMessage = txtMessage;
         this.owner = owner;
     }
 
     public Message(){
 
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Owner getOwner() {

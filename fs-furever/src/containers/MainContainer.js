@@ -10,6 +10,9 @@ import DogDetails from '../components/dogs/DogDetails';
 import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
+import Message from '../components/messages/Message';
+import MessageList from '../components/messages/MessageList';
+import MessageDetails from '../components/messages/MessageDetails';
 
 class MainContainer extends Component {
 
@@ -68,6 +71,13 @@ class MainContainer extends Component {
     return comment
   }
 
+  findMessageById(id) {
+    const message = this.state.messages.find((message) => {
+      return message.id === parseInt(id);
+    });
+    return message
+  }
+
   handleDelete(id) {
     const request = new Request();
     const url = `/api/owners/${id}`;
@@ -109,6 +119,10 @@ render(){
               const id = props.match.params.id;
               const owner = this.findOwnerById(id);
               return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
+            }}/>
+
+            <Route exact path="/owners/:id/messages" render= {(props) => {
+              return <MessageList messages = {this.state.messages} />
             }}/>
 
             <Route exact path="/dog/:id" render= {(props) => {

@@ -12,17 +12,17 @@ const Dog = (props) => {
 
   return (
     <div className="component">
-      <Link to = {url} className="name">
-        {props.dog.name}</Link>
+    <Link to = {url} className="name">
+    {props.dog.name}</Link>
 
-        <img src = {props.dog.picture} className="expand"/>
-        <p className="location">{props.dog.owner.location}</p>
-        <ul>
-        <li>{newComments}</li>
-        </ul>
+    <img src = {props.dog.picture} className="expand"/>
+    <p className="location">{props.dog.owner.location}</p>
+    <ul>
+    <li>{newComments}</li>
+    </ul>
 
-      </div>
-    )
-  }
+    </div>
+  )
+}
 
-  export default Dog;
+export default Dog;

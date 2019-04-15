@@ -69,9 +69,9 @@ public class DataLoader implements ApplicationRunner {
         dogRepository.save(dog10);
 
 
-        Message message1 = new Message("Hello. This is a test message", owner1);
+        Message message1 = new Message("Hello","Hello. This is a test message", owner1);
         messageRepository.save(message1);
-        Message message2 = new Message("Hello. This is a test message", owner2);
+        Message message2 = new Message("Hellooo","Hello. This is a test message", owner2);
         messageRepository.save(message2);
 
         Comment comment1 = new Comment("This is a test comment 1, lovely dog", dog3);
