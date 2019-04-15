@@ -8,6 +8,8 @@ import DogList from '../components/dogs/DogList';
 import Request from '../helpers/request';
 import DogDetails from '../components/dogs/DogDetails';
 import Dog from '../components/dogs/Dog';
+import Comment from '../components/dogs/Comment';
+import CommentForm from '../components/dogs/CommentForm';
 
 class MainContainer extends Component {
 
@@ -57,6 +59,13 @@ class MainContainer extends Component {
       return dog.id === parseInt(id);
     });
     return dog
+  }
+
+  findCommentById(id) {
+    const comment = this.state.comments.find((comment) => {
+      return comment.id === parseInt(id);
+    });
+    return comment
   }
 
   handleDelete(id) {

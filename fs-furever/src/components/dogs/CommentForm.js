@@ -6,7 +6,8 @@ class CommentForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      "text": "",
+      comments: [],
+      "text": ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,14 +24,16 @@ class CommentForm extends React.Component {
       window.location = '/dog/:id'
     })
   }
-}
 
-  return (
-    <div>
-    <form onSubmit = {this.handleSubmit}>
-    <input type = "text" placeholder="Add a comment" name="text" onChange={this.handleChange}/>
-    </form>
-    </div>
+  render() {
 
+    return (
+      <div>
+      <form onSubmit = {this.handleSubmit}>
+      <input type = "text" placeholder="Add a comment" name="text" onChange={this.handleChange}/>
+      </form>
+      </div>
+    )
+  }
 
 }

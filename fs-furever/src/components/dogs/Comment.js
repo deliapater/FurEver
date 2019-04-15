@@ -6,9 +6,8 @@ const Comment = (props) => {
   }
 
 
-
   return(
-
+    "loading..."
   )
 }
   export default Comment
