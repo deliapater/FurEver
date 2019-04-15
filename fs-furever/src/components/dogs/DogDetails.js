@@ -10,7 +10,9 @@ const DogDetails = (props) => {
   }
 
   console.log(props);
-
+  const newComments = props.dog.comments.map((dog, index) => {
+    return dog.text
+  })
 
   return(
 
@@ -20,7 +22,11 @@ const DogDetails = (props) => {
     <ul>Gender: {props.dog.gender}</ul>
     <ul>Description: {props.dog.description}</ul>
     <ul>Age: {props.dog.age}</ul>
-    <Owner owner = {props.dog.owner}  />
+  <ul>Owner:</ul><Owner owner = {props.dog.owner}  />
+    <p>Comments</p>
+    <ul>
+    <li>{newComments}</li>
+    </ul>
     <CommentForm />
     </div>
   )

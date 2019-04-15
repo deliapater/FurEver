@@ -4,7 +4,7 @@ import Owner from '../owners/Owner';
 
 const MyDogDetails = (props) => {
 
-  if (!props.dog){
+  if (!props.owner){
     return "loading....";
   }
 
@@ -14,7 +14,7 @@ const MyDogDetails = (props) => {
   return(
 
     <div className="component">
-    <Dog dog = {props.dog.id}  />
+    <Dog dog = {props.owner.id}  />
     <ul>Breed: {props.dog.breed}</ul>
     <ul>Gender: {props.dog.gender}</ul>
     <ul>Description: {props.dog.description}</ul>

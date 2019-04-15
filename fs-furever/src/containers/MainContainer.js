@@ -11,6 +11,7 @@ import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
 import MyDogDetails from '../components/dogs/MyDogsDetails';
+import HomeDetails from '../components/home/HomeDetails';
 
 class MainContainer extends Component {
 
@@ -94,6 +95,10 @@ render(){
           <NavBar/>
           <Switch>
             {/* GET ALL OWNERS */}
+            <Route exact path="/home" render={(props) => {
+              return <HomeDetails />
+            }}/>
+            
             <Route exact path="/owners" render={(props) => {
               return <OwnerList owners = {this.state.owners} />
             }}/>

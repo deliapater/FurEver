@@ -1,6 +1,7 @@
 import React from 'react';
 import Request from '../../helpers/request';
 
+
 class CommentForm extends React.Component {
 
   constructor(props){
@@ -26,7 +27,6 @@ class CommentForm extends React.Component {
   }
 
   render() {
-
     return (
       <div>
       <form onSubmit = {this.handleSubmit}>
