@@ -7,7 +7,6 @@ import java.util.List;
 @Projection(name = "embedMessages", types = Message.class)
 public interface EmbedMessages {
     long getId();
-    String getName();
-    List<Message> getTxtMessage();
+    String getTxtMessage();
     Owner getOwner();
 }

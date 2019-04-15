@@ -10,7 +10,10 @@ package com.codeclan.example.FurEver.projections;
 public interface EmbedDogs {
     long getId();
     String getName();
-    List<Dog> getDogs();
+    String getBreed();
+    String getDescription();
+    String getGender();
+    String getPicture();
     Owner getOwner();
     List<Comment> getComments();
 }

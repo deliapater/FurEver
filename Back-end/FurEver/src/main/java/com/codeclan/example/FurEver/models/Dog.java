@@ -1,6 +1,7 @@
 package com.codeclan.example.FurEver.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -33,6 +34,7 @@ public class Dog {
     @Column(name = "description")
     private String description;
 
+    @JsonIgnoreProperties("dogs")
     @ManyToOne
     @JoinColumn(name = "owner_id", nullable = false)
     private Owner owner;

@@ -25,12 +25,10 @@ public class Owner {
     @Column(name ="location")
     private String location;
 
-    @JsonIgnoreProperties
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private List<Dog> dogs;
 
-    @JsonIgnoreProperties
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Message> messages;

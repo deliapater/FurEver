@@ -1,5 +1,7 @@
 package com.codeclan.example.FurEver.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 
@@ -22,7 +24,7 @@ public class Message {
     @Column(name = "recipientId")
     private Long recipientId;
 
-
+    @JsonIgnoreProperties("messages")
     @ManyToOne
     @JoinColumn(name = "owner_id", nullable = false)
     private Owner owner;
