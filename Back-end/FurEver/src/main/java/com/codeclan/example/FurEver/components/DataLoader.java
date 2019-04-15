@@ -74,10 +74,12 @@ public class DataLoader implements ApplicationRunner {
         Message message2 = new Message("Hello. This is a test message", owner2);
         messageRepository.save(message2);
 
-        Comment comment1 = new Comment("This is a test comment, lovely dog", dog3);
+        Comment comment1 = new Comment("This is a test comment 1, lovely dog", dog3);
         commentRepository.save(comment1);
-        Comment comment2 = new Comment("This is a test comment, lovely dog", dog4);
+        Comment comment2 = new Comment("This is a test comment 2, lovely dog", dog4);
         commentRepository.save(comment2);
+        Comment comment3 = new Comment("This is a test comment 3, lovely dog", dog4);
+        commentRepository.save(comment3);
     }
 
 }

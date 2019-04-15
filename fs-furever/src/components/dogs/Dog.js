@@ -6,18 +6,21 @@ const Dog = (props) => {
 
   const url = `/dog/${props.dog.id}`;
 
-  // const comments = props.dog.comments.map((dog) => {
-  //   return dog.text
-  // })
+  const newComments = props.dog.comments.map((dog, index) => {
+    return dog.text
+  })
 
   return (
     <div className="component">
       <Link to = {url} className="name">
         {props.dog.name}</Link>
 
-        <img src = {props.dog.picture} class="expand"/>
+        <img src = {props.dog.picture} className="expand"/>
         <p className="location">{props.dog.owner.location}</p>
-        <p className="comments">{props.dog.comments[0].text}</p>
+        <ul>
+        <li>{newComments}</li>
+        </ul>
+
       </div>
     )
   }

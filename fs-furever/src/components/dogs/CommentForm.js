@@ -6,7 +6,7 @@ class CommentForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      comments: [],
+      "comments":[],
       "text": ""
     }
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +30,8 @@ class CommentForm extends React.Component {
     return (
       <div>
       <form onSubmit = {this.handleSubmit}>
-      <input type = "text" placeholder="Add a comment" name="text" onChange={this.handleChange}/>
+      <input type ="texterea" placeholder="Add a comment" name="text" onChange={this.handleChange}/>
+      <button type = "submit">Save</button>
       </form>
       </div>
     )
