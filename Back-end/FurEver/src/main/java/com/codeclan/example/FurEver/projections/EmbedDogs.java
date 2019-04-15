@@ -14,6 +14,7 @@ public interface EmbedDogs {
     String getDescription();
     String getGender();
     String getPicture();
+    int getAge();
     Owner getOwner();
     List<Comment> getComments();
 }

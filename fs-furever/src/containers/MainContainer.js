@@ -6,6 +6,8 @@ import OwnerDetails from '../components/owners/OwnerDetails';
 import OwnerForm from '../components/owners/OwnerForm';
 import DogList from '../components/dogs/DogList';
 import Request from '../helpers/request';
+import DogDetails from '../components/dogs/DogDetails';
+import Dog from '../components/dogs/Dog';
 
 class MainContainer extends Component {
 
@@ -18,7 +20,9 @@ class MainContainer extends Component {
       comments: []
     };
     this.findOwnerById = this.findOwnerById.bind(this);
+    this.findDogById = this.findDogById.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -38,14 +42,21 @@ class MainContainer extends Component {
         messages: data[2]._embedded.messages,
         comments: data[3]._embedded.comments,
       })
-    })
+    });
   }
 
   findOwnerById(id) {
     const owner = this.state.owners.find((owner) => {
       return owner.id === parseInt(id);
-    })
+    });
     return owner
+  }
+
+  findDogById(id) {
+    const dog = this.state.dogs.find((dog) => {
+      return dog.id === parseInt(id);
+    });
+    return dog
   }
 
   handleDelete(id) {
@@ -56,38 +67,53 @@ class MainContainer extends Component {
     });
   }
 
-  render(){
-    return (
-      <div>
-      <Router>
-      <React.Fragment>
-      <NavBar/>
-      <Switch>
-      {/* GET ALL OWNERS */}
-      <Route exact path="/owners" render={(props) => {
-        return <OwnerList owners = {this.state.owners} />
-      }}/>
-
-      <Route exact path="/dogs" render={(props) => {
-        return <DogList dogs = {this.state.dogs} />
-      }}/>
-
-      <Route exact path = "/owners/new" render={(props) => {
-        return <OwnerForm dogs = {this.state.dogs}/>
-      }}/>
-
-      <Route exact path="/owners/:id" render= {(props) => {
-        const id = props.match.params.id;
-        const owner = this.findOwnerById(id);
-        return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
-      }}/>
-
-      </Switch>
-      </React.Fragment>
-      </Router>
-      </div>
-    )
+  handleClick(id) {
+    const request = new Request();
+    const url = `/api/dog/${id}`;
+    request.get(url).then(() => {
+      window.location = '/dogs';
+    });
   }
+
+
+render(){
+  return (
+    <div>
+      <Router>
+        <React.Fragment>
+          <NavBar/>
+          <Switch>
+            {/* GET ALL OWNERS */}
+            <Route exact path="/owners" render={(props) => {
+              return <OwnerList owners = {this.state.owners} />
+            }}/>
+
+            <Route exact path="/dogs" render={(props) => {
+              return <DogList dogs = {this.state.dogs} />
+            }}/>
+
+            <Route exact path = "/owners/new" render={(props) => {
+              return <OwnerForm dogs = {this.state.dogs}/>
+            }}/>
+
+            <Route exact path="/owners/:id" render= {(props) => {
+              const id = props.match.params.id;
+              const owner = this.findOwnerById(id);
+              return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
+            }}/>
+
+            <Route exact path="/dog/:id" render= {(props) => {
+              const id = props.match.params.id;
+              const dog = this.findDogById(id);
+              return <DogDetails dog={dog} onClick={this.handleClick}/>
+            }}/>
+
+          </Switch>
+        </React.Fragment>
+      </Router>
+    </div>
+  )
+}
 }
 
 export default MainContainer;
