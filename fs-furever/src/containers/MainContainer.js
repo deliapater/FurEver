@@ -4,6 +4,7 @@ import NavBar from '../NavBar.js';
 import OwnerList from '../components/owners/OwnerList';
 import OwnerDetails from '../components/owners/OwnerDetails';
 import OwnerForm from '../components/owners/OwnerForm';
+import DogList from '../components/dogs/DogList';
 import Request from '../helpers/request';
 
 class MainContainer extends Component {
@@ -67,6 +68,10 @@ class MainContainer extends Component {
         return <OwnerList owners = {this.state.owners} />
       }}/>
 
+      <Route exact path="/dogs" render={(props) => {
+        return <DogList dogs = {this.state.dogs} />
+      }}/>
+
       <Route exact path = "/owners/new" render={(props) => {
         return <OwnerForm dogs = {this.state.dogs}/>
       }}/>
@@ -74,7 +79,6 @@ class MainContainer extends Component {
       <Route exact path="/owners/:id" render= {(props) => {
         const id = props.match.params.id;
         const owner = this.findOwnerById(id);
-        console.log(owner);
         return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
       }}/>
 

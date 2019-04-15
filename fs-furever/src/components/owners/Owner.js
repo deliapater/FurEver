@@ -12,8 +12,8 @@ const Owner = (props) => {
   return (
     <>
     <Link to = {url} className="name">
-    <p>Name: {props.owner.name}</p></Link>
-    <p>Email: {props.owner.email}</p>
+    <p>{props.owner.name}</p></Link>
+    <p>{props.owner.location}</p>
     </>
   )
 }
