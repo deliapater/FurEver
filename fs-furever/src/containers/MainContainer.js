@@ -10,6 +10,7 @@ import DogDetails from '../components/dogs/DogDetails';
 import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
+import MyDogDetails from '../components/dogs/MyDogsDetails';
 
 class MainContainer extends Component {
 
@@ -105,19 +106,16 @@ render(){
               return <OwnerForm dogs = {this.state.dogs}/>
             }}/>
 
-            <Route exact path="/owners/:id" render= {(props) => {
+            <Route exact path="/mydogs" render= {(props) => {
               const id = props.match.params.id;
-              const owner = this.findOwnerById(id);
-              return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
+              const mydog = this.findDogById(4);
+              return <DogDetails dog={mydog} onClick={this.handleClick}/>
             }}/>
 
             <Route exact path="/dog/:id" render= {(props) => {
               const id = props.match.params.id;
               const dog = this.findDogById(id);
               return <DogDetails dog={dog} onClick={this.handleClick}/>
-
-      
-
             }}/>
 
 

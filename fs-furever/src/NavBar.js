@@ -9,11 +9,11 @@ const NavBar = (props) => {
       <li className="homeLink">
       <Link to="/home">Home</Link>
       </li>
-      <li className="ownersLink">
-      <Link to="/owners">Owners</Link>
-      </li>
       <li className="dogsLink">
       <Link to="/dogs">Dogs</Link>
+      </li>
+      <li className="myDogsLink">
+      <Link to="/mydogs">My Dogs</Link>
       </li>
       <li className="messagesLink">
       <Link to="/messages">My Messages</Link>
