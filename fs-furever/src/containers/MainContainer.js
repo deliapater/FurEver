@@ -21,7 +21,7 @@ class MainContainer extends Component {
     };
     this.findOwnerById = this.findOwnerById.bind(this);
     this.findDogById = this.findDogById.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    // this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 

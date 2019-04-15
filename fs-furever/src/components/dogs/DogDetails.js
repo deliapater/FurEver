@@ -4,23 +4,21 @@ import Owner from '../owners/Owner';
 
 const DogDetails = (props) => {
 
-if (!props.dog){
-  return "loading....";
-}
+  if (!props.dog){
+    return "loading....";
+  }
 
-// const dog = props.dogs.map((dog, index) => {
-//   return <li key={index}>{dog.name}</li>
-// })
+  return(
 
-return(
-
-  <div className="component">
+    <div className="component">
     <Dog dog = {props.dog}  />
-    <ul>{props.dog.description}</ul>
-    <ul>{props.dog.gender}</ul>
-    <ul>{props.dog.age}</ul>
-  </div>
-)
+    <ul>Breed: {props.dog.breed}</ul>
+    <ul>Gender: {props.dog.gender}</ul>
+    <ul>Description: {props.dog.description}</ul>
+    <ul>Age: {props.dog.age}</ul>
+    <Owner owner = {props.dog.owner}  />
+    </div>
+  )
 
 }
 

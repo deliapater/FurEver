@@ -13,7 +13,6 @@ const Owner = (props) => {
     <>
     <Link to = {url} className="name">
     <p>{props.owner.name}</p></Link>
-    <p>{props.owner.location}</p>
     </>
   )
 }
