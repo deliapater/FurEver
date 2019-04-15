@@ -1,5 +1,7 @@
 package com.codeclan.example.FurEver.projections;
 
+        import com.codeclan.example.FurEver.models.Dog;
+        import com.codeclan.example.FurEver.models.Message;
         import com.codeclan.example.FurEver.models.Owner;
         import org.springframework.data.rest.core.config.Projection;
         import java.util.List;
@@ -8,5 +10,6 @@ package com.codeclan.example.FurEver.projections;
 public interface EmbedOwners {
     long getId();
     String getName();
-    List<Owner> getOwners();
+    List<Dog> getDogs();
+    List<Message> getMessages();
 }
