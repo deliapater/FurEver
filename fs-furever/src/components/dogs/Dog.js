@@ -10,8 +10,9 @@ const Dog = (props) => {
       <Link to = {url} className="name">
         {props.dog.name}</Link>
 
-        <img src = {props.dog.picture} alt="Image" class="expand"/>
+        <img src = {props.dog.picture} class="expand"/>
         <p className="location">{props.dog.owner.location}</p>
+        <p className="comments">{props.dog.comments}</p>
 
 
 

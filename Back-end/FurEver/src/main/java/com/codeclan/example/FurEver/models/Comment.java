@@ -19,6 +19,7 @@ public class Comment {
 
     public Comment(String text, Dog dog) {
         this.text = text;
+        this.dog = dog;
     }
 
     public Comment(){
