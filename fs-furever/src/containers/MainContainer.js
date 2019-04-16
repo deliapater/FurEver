@@ -121,7 +121,7 @@ render(){
               return <OwnerForm dogs = {this.state.dogs}/>
             }}/>
 
-<<<<<<< HEAD
+
             <Route exact path="/mydogs" render= {(props) => {
               const id = props.match.params.id;
               const mydog = this.findDogById(4);
@@ -134,7 +134,8 @@ render(){
 
             <Route exact path="/owners/:id/messages" render= {(props) => {
               return <MessageList messages = {this.state.messages} />
-=======
+            }}/>
+            
             <Route exact path = "/dogs/new" render={(props) => {
               return <DogForm dogs = {this.state.dogs}/>
             }}/>
@@ -143,20 +144,17 @@ render(){
               const id = props.match.params.id;
               const owner = this.findOwnerById(id);
               return <OwnerDetails owner={owner}/>
->>>>>>> React/Misc
+
             }}/>
 
             <Route exact path="/dog/:id" render= {(props) => {
               const id = props.match.params.id;
               const dog = this.findDogById(id);
-<<<<<<< HEAD
+
               return <DogDetails dog={dog} onClick={this.handleClick}/>
-=======
+
               return <DogDetails dog={dog} onClick={this.handleClick} onDelete ={this.handleDelete}/>
 
-
-
->>>>>>> React/Misc
             }}/>
 
 
