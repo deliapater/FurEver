@@ -6,7 +6,7 @@ const Comment = (props) => {
   }
 
   return(
-    <ul>{props.children}</ul>
+    <p>{props.children}</p>
   )
 }
 export default Comment

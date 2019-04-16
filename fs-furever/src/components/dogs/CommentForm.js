@@ -40,7 +40,7 @@ class CommentForm extends React.Component {
       <div>
       <form onSubmit = {this.handleSubmit}>
 
-      <input placeholder="Add a comment" name="text" />
+      <textarea rows="4" cols="50" placeholder="Add a comment" name="text" />
       <button type = "submit">Add</button>
       </form>
       </div>
