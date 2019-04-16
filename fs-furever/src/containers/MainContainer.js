@@ -10,6 +10,7 @@ import DogDetails from '../components/dogs/DogDetails';
 import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
+import DogForm from '../components/dogs/DogForm';
 
 class MainContainer extends Component {
 
@@ -23,7 +24,7 @@ class MainContainer extends Component {
     };
     this.findOwnerById = this.findOwnerById.bind(this);
     this.findDogById = this.findDogById.bind(this);
-    // this.handleDelete = this.handleDelete.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -70,9 +71,9 @@ class MainContainer extends Component {
 
   handleDelete(id) {
     const request = new Request();
-    const url = `/api/owners/${id}`;
+    const url = `/api/dogs/${id}`;
     request.delete(url).then(() => {
-      window.location = '/owners';
+      window.location = '/dogs';
     });
   }
 
@@ -105,18 +106,22 @@ render(){
               return <OwnerForm dogs = {this.state.dogs}/>
             }}/>
 
+            <Route exact path = "/dogs/new" render={(props) => {
+              return <DogForm dogs = {this.state.dogs}/>
+            }}/>
+
             <Route exact path="/owners/:id" render= {(props) => {
               const id = props.match.params.id;
               const owner = this.findOwnerById(id);
-              return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
+              return <OwnerDetails owner={owner}/>
             }}/>
 
             <Route exact path="/dog/:id" render= {(props) => {
               const id = props.match.params.id;
               const dog = this.findDogById(id);
-              return <DogDetails dog={dog} onClick={this.handleClick}/>
+              return <DogDetails dog={dog} onClick={this.handleClick} onDelete ={this.handleDelete}/>
 
-      
+
 
             }}/>
 

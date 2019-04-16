@@ -9,7 +9,9 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
-  console.log(props);
+  const handleDelete = () => {
+    props.onDelete(props.dog.id);
+  }
 
 
   return(
@@ -20,11 +22,12 @@ const DogDetails = (props) => {
     <ul>Gender: {props.dog.gender}</ul>
     <ul>Description: {props.dog.description}</ul>
     <ul>Age: {props.dog.age}</ul>
-    <Owner owner = {props.dog.owner}  />
+    <Owner owner = {props.dog.owner}/>
     <CommentForm />
+    <button onClick = {handleDelete}>Delete {props.dog.name}</button>
     </div>
   )
 
 }
 
-export default DogDetails
+export default DogDetails;

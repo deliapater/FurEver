@@ -51,4 +51,14 @@ public enum BreedType {
     GermenSheper,
     Chihuaha,
 
+    private String fullBreedList;
+
+    public String getFullBreedList()
+    {
+        return fullBreedList;
+    }
 }
+
+
+
+
