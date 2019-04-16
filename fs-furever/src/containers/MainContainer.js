@@ -12,6 +12,7 @@ import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
 import MyDogDetails from '../components/dogs/MyDogsDetails';
 import HomeDetails from '../components/home/HomeDetails';
+import GalleryDetails from '../components/gallery/GalleryDetails';
 
 class MainContainer extends Component {
 
@@ -98,7 +99,7 @@ render(){
             <Route exact path="/home" render={(props) => {
               return <HomeDetails />
             }}/>
-            
+
             <Route exact path="/owners" render={(props) => {
               return <OwnerList owners = {this.state.owners} />
             }}/>
@@ -115,6 +116,10 @@ render(){
               const id = props.match.params.id;
               const mydog = this.findDogById(4);
               return <DogDetails dog={mydog} onClick={this.handleClick}/>
+            }}/>
+
+            <Route exact path="/gallery" render={(props) => {
+              return <GalleryDetails />
             }}/>
 
             <Route exact path="/dog/:id" render= {(props) => {

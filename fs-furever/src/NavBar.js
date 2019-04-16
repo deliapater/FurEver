@@ -15,6 +15,9 @@ const NavBar = (props) => {
       <li className="myDogsLink">
       <Link to="/mydogs">My Dogs</Link>
       </li>
+      <li className="galleryLink">
+      <Link to="/gallery">Gallery Photos</Link>
+      </li>
       <li className="messagesLink">
       <Link to="/messages">My Messages</Link>
       </li>
