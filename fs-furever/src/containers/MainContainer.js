@@ -129,7 +129,12 @@ render(){
               const id = props.match.params.id;
               const dog = this.findDogById(id);
               return <DogDetails dog={dog} onClick={this.handleClick}/>
+
+      
+
             }}/>
+
+
 
           </Switch>
         </React.Fragment>
