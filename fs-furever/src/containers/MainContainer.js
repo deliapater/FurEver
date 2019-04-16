@@ -11,6 +11,7 @@ import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
 import DogForm from '../components/dogs/DogForm';
+import Breeds from '../components/dogs/Breeds';
 import MyDogDetails from '../components/dogs/MyDogsDetails';
 import HomeDetails from '../components/home/HomeDetails';
 import GalleryDetails from '../components/gallery/GalleryDetails';
@@ -30,6 +31,8 @@ class MainContainer extends Component {
     this.findDogById = this.findDogById.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmitDog = this.handleSubmitDog.bind(this);
+
   }
 
   componentDidMount() {
@@ -96,6 +99,15 @@ class MainContainer extends Component {
     });
   }
 
+  handleSubmitDog(dog){
+    const request = new Request();
+    request.post('/api/dogs', dog).then(() => {
+      window.location = '/dogs'
+    })
+  }
+
+
+
 
 render(){
   return (
@@ -117,11 +129,8 @@ render(){
               return <DogList dogs = {this.state.dogs} />
             }}/>
 
-            <Route exact path = "/owners/new" render={(props) => {
-              return <OwnerForm dogs = {this.state.dogs}/>
-            }}/>
 
-<<<<<<< HEAD
+
             <Route exact path="/mydogs" render= {(props) => {
               const id = props.match.params.id;
               const mydog = this.findDogById(4);
@@ -134,29 +143,28 @@ render(){
 
             <Route exact path="/owners/:id/messages" render= {(props) => {
               return <MessageList messages = {this.state.messages} />
-=======
+              }}/>
+
             <Route exact path = "/dogs/new" render={(props) => {
-              return <DogForm dogs = {this.state.dogs}/>
+              return <DogForm dogs = {this.state.dogs} onClick={this.handleSubmitDog} handleSubmitDog={this.handleSubmitDog}/>
             }}/>
 
             <Route exact path="/owners/:id" render= {(props) => {
               const id = props.match.params.id;
               const owner = this.findOwnerById(id);
               return <OwnerDetails owner={owner}/>
->>>>>>> React/Misc
+
             }}/>
 
             <Route exact path="/dog/:id" render= {(props) => {
               const id = props.match.params.id;
               const dog = this.findDogById(id);
-<<<<<<< HEAD
+
               return <DogDetails dog={dog} onClick={this.handleClick}/>
-=======
+
               return <DogDetails dog={dog} onClick={this.handleClick} onDelete ={this.handleDelete}/>
 
 
-
->>>>>>> React/Misc
             }}/>
 
 

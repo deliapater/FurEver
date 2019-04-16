@@ -47,11 +47,11 @@ public class FurEverApplicationTests {
         Owner owner2 = new Owner("Delia Paterina", "delia@home.com", "Glasgow");
         ownerRepository.save(owner2);
 
-        Dog dog1 = new Dog("Fido", BreedType.Affenpinscher, "Male", 4, "picUrl", "I am Fido, I am a four year old Affenpinscher from Austria", owner1);
+        Dog dog1 = new Dog("Fido", "Affenpinscher", "Male", 4, "picUrl", "I am Fido, I am a four year old Affenpinscher from Austria", owner1);
         dogRepository.save(dog1);
-        Dog dog2 = new Dog("Wido", BreedType.AlaskanKleeKai, "Female", 5, "picUrl", "I am Wido, I am a five year old Alaskan KleeKai from Alaska", owner1);
+        Dog dog2 = new Dog("Wido", "AlaskanKleeKai", "Female", 5, "picUrl", "I am Wido, I am a five year old Alaskan KleeKai from Alaska", owner1);
         dogRepository.save(dog2);
-        Dog dog3 = new Dog("Kloe", BreedType.AfghanHound, "Female", 2, "picUrl", "I am Kloe, I am a two year old Afghan Hound from Afghanistan", owner2);
+        Dog dog3 = new Dog("Kloe", "AfghanHound", "Female", 2, "picUrl", "I am Kloe, I am a two year old Afghan Hound from Afghanistan", owner2);
         dogRepository.save(dog3);
 
         Message message1 = new Message("Hello", "Hello. This is a test message", owner1);

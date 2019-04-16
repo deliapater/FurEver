@@ -20,7 +20,7 @@ public class Dog {
     private String name;
 
     @Column(name = "breed")
-    private BreedType breed;
+    private String breed;
 
     @Column(name = "gender")
     private String gender;
@@ -43,8 +43,7 @@ public class Dog {
     @OneToMany(mappedBy = "dog", fetch = FetchType.LAZY)
     private List<Comment> comments;
 
-    public Dog(String name, BreedType breed, String gender, int age, String picture, String description, Owner owner) {
-//        this.id = id;
+    public Dog(String name, String breed, String gender, int age, String picture, String description, Owner owner) {
         this.name = name;
         this.breed = breed;
         this.gender= gender;
@@ -76,11 +75,11 @@ public class Dog {
         this.name = name;
     }
 
-    public BreedType getBreed() {
+    public String getBreed() {
         return breed;
     }
 
-    public void setBreed(BreedType breed) {
+    public void setBreed(String breed) {
         this.breed = breed;
     }
 
