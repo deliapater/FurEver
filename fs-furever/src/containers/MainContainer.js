@@ -13,6 +13,7 @@ import CommentForm from '../components/dogs/CommentForm';
 import MyDogDetails from '../components/dogs/MyDogsDetails';
 import HomeDetails from '../components/home/HomeDetails';
 import GalleryDetails from '../components/gallery/GalleryDetails';
+import MessageList from '../components/messages/MessageList';
 
 class MainContainer extends Component {
 

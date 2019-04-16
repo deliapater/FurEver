@@ -9,7 +9,11 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
-  return(
+ const newComments = props.dog.comments.map((dog, index) => {
+   return dog.text
+ })
+
+ return (
 
     <div className="component">
     <Dog dog = {props.dog}  />
