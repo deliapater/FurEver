@@ -54,11 +54,17 @@ public class FurEverApplicationTests {
         Dog dog3 = new Dog("Kloe", BreedType.AfghanHound, "Female", 2, "picUrl", "I am Kloe, I am a two year old Afghan Hound from Afghanistan", owner2);
         dogRepository.save(dog3);
 
-        Message message1 = new Message("Hello", "Hello. This is a test message", owner1);
+        Message message1 = new Message("Hello", "Hello. This is test message one.", owner1);
         messageRepository.save(message1);
 
-        Message message2 = new Message("Hellooo", "Hello. This is a test response", owner2);
+        Message message2 = new Message("Hellooo", "Hello. This is test message two.", owner1);
         messageRepository.save(message2);
+
+        Message message3 = new Message("Hello", "Hello. This is test message three.", owner1);
+        messageRepository.save(message3);
+
+        Message message4 = new Message("Hellooo", "Hello. This is test message four.", owner2);
+        messageRepository.save(message4);
 
         Comment comment1 = new Comment("This is a test comment, lovely dog", dog3);
         commentRepository.save(comment1);

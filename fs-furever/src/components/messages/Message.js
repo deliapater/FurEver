@@ -13,6 +13,7 @@ const Message = (props) => {
     <>
     <Link to = {url} className="title">
     <p>{props.message.title}</p></Link>
+    <p>{props.message.txtMessage}</p>
     </>
   )
 }

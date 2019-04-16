@@ -9,11 +9,11 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
- const newComments = props.dog.comments.map((dog, index) => {
-   return dog.text
- })
+  const newComments = props.dog.comments.map((dog, index) => {
+    return dog.text
+  })
 
- return (
+  return (
 
     <div className="component">
     <Dog dog = {props.dog}  />
@@ -21,7 +21,7 @@ const DogDetails = (props) => {
     <ul>Gender: {props.dog.gender}</ul>
     <ul>Description: {props.dog.description}</ul>
     <ul>Age: {props.dog.age}</ul>
-  <ul>Owner:</ul><Owner owner = {props.dog.owner}  />
+    <ul>Owner:</ul><Owner owner = {props.dog.owner}  />
     <p>Comments</p>
     <ul>
     <li>{newComments}</li>

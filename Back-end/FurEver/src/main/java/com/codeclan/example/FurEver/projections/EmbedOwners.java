@@ -12,4 +12,5 @@ public interface EmbedOwners {
     String getName();
     List<Dog> getDogs();
     List<Message> getMessages();
+    String getLocation();
 }

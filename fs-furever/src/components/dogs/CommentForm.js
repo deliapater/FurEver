@@ -1,7 +1,6 @@
 import React from 'react';
 import Request from '../../helpers/request';
 
-
 class CommentForm extends React.Component {
 
   constructor(props){
@@ -30,8 +29,10 @@ class CommentForm extends React.Component {
     return (
       <div>
       <form onSubmit = {this.handleSubmit}>
-      <textarea  rows="4" cols="50"  placeholder="Add a comment" name="text" onChange={this.handleChange}/>
+      <label>
+      <input type="text" placeholder="Add a comment" name="text" onChange={this.handleChange}/>
       <button type = "submit">Add</button>
+      </label>
       </form>
       </div>
     )
