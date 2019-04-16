@@ -10,9 +10,9 @@ import DogDetails from '../components/dogs/DogDetails';
 import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
-import Message from '../components/messages/Message';
-import MessageList from '../components/messages/MessageList';
-import MessageDetails from '../components/messages/MessageDetails';
+import MyDogDetails from '../components/dogs/MyDogsDetails';
+import HomeDetails from '../components/home/HomeDetails';
+import GalleryDetails from '../components/gallery/GalleryDetails';
 
 class MainContainer extends Component {
 
@@ -103,6 +103,10 @@ render(){
           <NavBar/>
           <Switch>
             {/* GET ALL OWNERS */}
+            <Route exact path="/home" render={(props) => {
+              return <HomeDetails />
+            }}/>
+
             <Route exact path="/owners" render={(props) => {
               return <OwnerList owners = {this.state.owners} />
             }}/>
@@ -115,10 +119,14 @@ render(){
               return <OwnerForm dogs = {this.state.dogs}/>
             }}/>
 
-            <Route exact path="/owners/:id" render= {(props) => {
+            <Route exact path="/mydogs" render= {(props) => {
               const id = props.match.params.id;
-              const owner = this.findOwnerById(id);
-              return <OwnerDetails owner={owner} onDelete={this.handleDelete}/>
+              const mydog = this.findDogById(4);
+              return <DogDetails dog={mydog} onClick={this.handleClick}/>
+            }}/>
+
+            <Route exact path="/gallery" render={(props) => {
+              return <GalleryDetails />
             }}/>
 
             <Route exact path="/owners/:id/messages" render= {(props) => {
@@ -129,9 +137,6 @@ render(){
               const id = props.match.params.id;
               const dog = this.findDogById(id);
               return <DogDetails dog={dog} onClick={this.handleClick}/>
-
-      
-
             }}/>
 
 

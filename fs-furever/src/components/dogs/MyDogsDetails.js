@@ -1,31 +1,28 @@
 import React from 'react';
 import Dog from './Dog';
 import Owner from '../owners/Owner';
-import CommentForm from './CommentForm';
 
-const DogDetails = (props) => {
+const MyDogDetails = (props) => {
 
-  if (!props.dog){
+  if (!props.owner){
     return "loading....";
   }
+
+  console.log(props);
+
 
   return(
 
     <div className="component">
-    <Dog dog = {props.dog}  />
+    <Dog dog = {props.owner.id}  />
     <ul>Breed: {props.dog.breed}</ul>
     <ul>Gender: {props.dog.gender}</ul>
     <ul>Description: {props.dog.description}</ul>
     <ul>Age: {props.dog.age}</ul>
-  <ul>Owner:</ul><Owner owner = {props.dog.owner}  />
-    <p>Comments</p>
-    <ul>
-    <li>{newComments}</li>
-    </ul>
-    <CommentForm />
+    <Owner owner = {props.dog.owner}  />
     </div>
   )
 
 }
 
-export default DogDetails
+export default MyDogDetails
