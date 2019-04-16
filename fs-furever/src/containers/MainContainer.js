@@ -24,7 +24,8 @@ class MainContainer extends Component {
       owners: [],
       dogs: [],
       messages: [],
-      comments: []
+      comments: [],
+      dog: null
     };
     this.findOwnerById = this.findOwnerById.bind(this);
     this.findDogById = this.findDogById.bind(this);
@@ -152,12 +153,10 @@ render(){
             <Route exact path="/dog/:id" render= {(props) => {
               const id = props.match.params.id;
               const dog = this.findDogById(id);
-
+              console.log("Hello");
               return <DogDetails dog={dog} onClick={this.handleClick}/>
 
             }}/>
-
-
 
           </Switch>
         </React.Fragment>

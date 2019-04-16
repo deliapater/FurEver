@@ -1,13 +1,12 @@
 import React from 'react';
 
 const Comment = (props) => {
-  if(!props.comment){
-    return "loading..."
+  if(!props.children){
+    return "loading............."
   }
 
-
   return(
-    "loading..."
+    <ul>{props.children}</ul>
   )
 }
-  export default Comment
+export default Comment
