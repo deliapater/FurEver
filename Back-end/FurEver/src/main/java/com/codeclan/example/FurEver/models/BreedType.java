@@ -1,5 +1,8 @@
 package com.codeclan.example.FurEver.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum BreedType {
     Affenpinscher,
     AfghanHound,
@@ -49,6 +52,23 @@ public enum BreedType {
     Ladrador,
     Bulldog,
     GermenSheper,
-    Chihuaha,
+    Chihuaha;
 
+
+    
+
+
+
+    BreedType[] breeds = BreedType.values();
+
+    public BreedType[] getBreeds() {
+        return breeds;
+    }
 }
+
+
+
+
+
+
+

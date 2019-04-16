@@ -2,6 +2,7 @@ import React from 'react';
 import Dog from './Dog';
 import Owner from '../owners/Owner';
 import CommentForm from './CommentForm';
+import Comment from './Comment';
 
 const DogDetails = (props) => {
 
@@ -9,11 +10,21 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
+<<<<<<< HEAD
   const newComments = props.dog.comments.map((dog, index) => {
     return dog.text
   })
 
   return (
+=======
+
+ const newComments = props.dog.comments.map(comment => {
+       return (
+         <Comment key={comment.id}>{comment.text}</Comment>
+       )
+     })
+ return (
+>>>>>>> develop
 
     <div className="component">
     <Dog dog = {props.dog}  />
@@ -26,10 +37,10 @@ const DogDetails = (props) => {
     <ul>
     <li>{newComments}</li>
     </ul>
-    <CommentForm />
+    <CommentForm dogId={props.dog.id} dog={props.dog}/>
     </div>
   )
 
 }
 
-export default DogDetails
+export default DogDetails;

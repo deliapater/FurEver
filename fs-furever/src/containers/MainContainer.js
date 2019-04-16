@@ -10,7 +10,13 @@ import DogDetails from '../components/dogs/DogDetails';
 import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
+import DogForm from '../components/dogs/DogForm';
+<<<<<<< HEAD
+import MyDogsDetails from '../components/dogs/MyDogsDetails';
+=======
+import Breeds from '../components/dogs/Breeds';
 import MyDogDetails from '../components/dogs/MyDogsDetails';
+>>>>>>> develop
 import HomeDetails from '../components/home/HomeDetails';
 import GalleryDetails from '../components/gallery/GalleryDetails';
 import Message from '../components/messages/Message';
@@ -26,13 +32,19 @@ class MainContainer extends Component {
       owners: [],
       dogs: [],
       messages: [],
-      comments: []
+      comments: [],
+      dog: null
     };
     this.findOwnerById = this.findOwnerById.bind(this);
     this.findDogById = this.findDogById.bind(this);
-    // this.handleDelete = this.handleDelete.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
+<<<<<<< HEAD
     this.findOwnerMessages = this.findOwnerMessages.bind(this);
+=======
+    this.handleSubmitDog = this.handleSubmitDog.bind(this);
+
+>>>>>>> develop
   }
 
   componentDidMount() {
@@ -85,9 +97,9 @@ class MainContainer extends Component {
 
   handleDelete(id) {
     const request = new Request();
-    const url = `/api/owners/${id}`;
+    const url = `/api/dogs/${id}`;
     request.delete(url).then(() => {
-      window.location = '/owners';
+      window.location = '/mydogs';
     });
   }
 
@@ -106,6 +118,15 @@ class MainContainer extends Component {
     })
     return messages;
   }
+
+  handleSubmitDog(dog){
+    const request = new Request();
+    request.post('/api/dogs', dog).then(() => {
+      window.location = '/dogs'
+    })
+  }
+
+
 
 
   render(){
@@ -157,7 +178,7 @@ class MainContainer extends Component {
       <Route exact path="/account/:id" render={(props) => {
         const id = props.match.params.id;
         const owner = this.findOwnerById(id)
-        
+
         return <Account owner={owner} />
       }}/>
 
@@ -169,6 +190,61 @@ class MainContainer extends Component {
 
       </Switch>
       </React.Fragment>
+        <React.Fragment>
+          <NavBar/>
+          <Switch>
+            {/* GET ALL OWNERS */}
+            <Route exact path="/home" render={(props) => {
+              return <HomeDetails />
+            }}/>
+
+            <Route exact path="/owners" render={(props) => {
+              return <OwnerList owners = {this.state.owners} />
+            }}/>
+
+            <Route exact path="/dogs" render={(props) => {
+              return <DogList dogs = {this.state.dogs} />
+            }}/>
+
+
+
+            <Route exact path="/mydogs" render= {(props) => {
+              const id = props.match.params.id;
+              const mydog = this.findDogById(4);
+              return <MyDogsDetails dog={mydog} onClick={this.handleClick} onDelete ={this.handleDelete}
+              />
+            }}/>
+
+
+            <Route exact path="/gallery" render={(props) => {
+              return <GalleryDetails />
+            }}/>
+
+            <Route exact path="/owners/:id/messages" render= {(props) => {
+              return <MessageList messages = {this.state.messages} />
+            }}/>
+
+            <Route exact path = "/dogs/new" render={(props) => {
+              return <DogForm dogs = {this.state.dogs} onClick={this.handleSubmitDog} handleSubmitDog={this.handleSubmitDog}/>
+            }}/>
+
+            <Route exact path="/owners/:id" render= {(props) => {
+              const id = props.match.params.id;
+              const owner = this.findOwnerById(id);
+              return <OwnerDetails owner={owner}/>
+
+            }}/>
+
+            <Route exact path="/dog/:id" render= {(props) => {
+              const id = props.match.params.id;
+              const dog = this.findDogById(id);
+              console.log("Hello");
+              return <DogDetails dog={dog} onClick={this.handleClick}/>
+
+            }}/>
+
+          </Switch>
+        </React.Fragment>
       </Router>
       </div>
     )
