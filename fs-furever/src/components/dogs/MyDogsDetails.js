@@ -1,6 +1,8 @@
 import React from 'react';
 import Dog from './Dog';
 import Owner from '../owners/Owner';
+import DogForm from './DogForm';
+import Breeds from './Breeds';
 
 const MyDogsDetails = (props) => {
 

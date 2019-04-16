@@ -1,5 +1,6 @@
 package com.codeclan.example.FurEver.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public enum BreedType {
@@ -54,8 +55,18 @@ public enum BreedType {
     Chihuaha;
 
 
+    
 
+
+
+    BreedType[] breeds = BreedType.values();
+
+    public BreedType[] getBreeds() {
+        return breeds;
+    }
 }
+
+
 
 
 
