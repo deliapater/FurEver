@@ -10,7 +10,7 @@ const NavBar = (props) => {
       <Link to="/home">Home</Link>
       </li>
       <li className="dogsLink">
-      <Link to="/dogs">Dogs</Link>
+      <Link to="/dogs">Search Dogs</Link>
       </li>
       <li className="myDogsLink">
       <Link to="/mydogs">My Dogs</Link>

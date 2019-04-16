@@ -11,7 +11,7 @@ import Dog from '../components/dogs/Dog';
 import Comment from '../components/dogs/Comment';
 import CommentForm from '../components/dogs/CommentForm';
 import DogForm from '../components/dogs/DogForm';
-import MyDogDetails from '../components/dogs/MyDogsDetails';
+import MyDogsDetails from '../components/dogs/MyDogsDetails';
 import HomeDetails from '../components/home/HomeDetails';
 import GalleryDetails from '../components/gallery/GalleryDetails';
 import MessageList from '../components/messages/MessageList';
@@ -84,7 +84,7 @@ class MainContainer extends Component {
     const request = new Request();
     const url = `/api/dogs/${id}`;
     request.delete(url).then(() => {
-      window.location = '/dogs';
+      window.location = '/mydogs';
     });
   }
 
@@ -125,8 +125,10 @@ render(){
             <Route exact path="/mydogs" render= {(props) => {
               const id = props.match.params.id;
               const mydog = this.findDogById(4);
-              return <DogDetails dog={mydog} onClick={this.handleClick}/>
+              return <MyDogsDetails dog={mydog} onClick={this.handleClick} onDelete ={this.handleDelete}
+              />
             }}/>
+
 
             <Route exact path="/gallery" render={(props) => {
               return <GalleryDetails />
@@ -135,7 +137,7 @@ render(){
             <Route exact path="/owners/:id/messages" render= {(props) => {
               return <MessageList messages = {this.state.messages} />
             }}/>
-            
+
             <Route exact path = "/dogs/new" render={(props) => {
               return <DogForm dogs = {this.state.dogs}/>
             }}/>
@@ -152,8 +154,6 @@ render(){
               const dog = this.findDogById(id);
 
               return <DogDetails dog={dog} onClick={this.handleClick}/>
-
-              return <DogDetails dog={dog} onClick={this.handleClick} onDelete ={this.handleDelete}/>
 
             }}/>
 

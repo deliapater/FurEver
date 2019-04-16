@@ -9,9 +9,7 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
-  const handleDelete = () => {
-    props.onDelete(props.dog.id);
-  }
+
  const newComments = props.dog.comments.map((dog, index) => {
    return dog.text
  })
@@ -30,7 +28,6 @@ const DogDetails = (props) => {
     <li>{newComments}</li>
     </ul>
     <CommentForm />
-    <button onClick = {handleDelete}>Delete {props.dog.name}</button>
     </div>
   )
 

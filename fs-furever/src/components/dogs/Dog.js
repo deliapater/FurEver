@@ -13,7 +13,7 @@ const Dog = (props) => {
     {props.dog.name}</Link>
 
         <img src = {props.dog.picture} className="expand" alt="profile" height="30%" width="30%"/>
-        <p className="location">{props.dog.owner.location}</p>
+    
 
 
     </div>
