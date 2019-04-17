@@ -1,6 +1,6 @@
 import React from 'react';
 import OwnerList from '../owners/OwnerList';
-import {LocationSelect, BreedSelect, GenderSelect} from './LocationSelect';
+
 
 const FilterBar = ({locations, breeds, gender, onOptionChange}) => {
 
