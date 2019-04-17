@@ -10,21 +10,12 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
-<<<<<<< HEAD
-  const newComments = props.dog.comments.map((dog, index) => {
-    return dog.text
-  })
-
-  return (
-=======
-
  const newComments = props.dog.comments.map(comment => {
        return (
          <Comment key={comment.id}>{comment.text}</Comment>
        )
      })
  return (
->>>>>>> develop
 
     <div className="component">
     <Dog dog = {props.dog}  />

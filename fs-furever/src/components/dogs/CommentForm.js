@@ -38,14 +38,8 @@ class CommentForm extends React.Component {
     return (
       <div>
       <form onSubmit = {this.handleSubmit}>
-<<<<<<< HEAD
-      <label>
-      <input type="text" placeholder="Add a comment" name="text" onChange={this.handleChange}/>
-=======
       <textarea rows="4" cols="50" placeholder="Add a comment" name="text" />
->>>>>>> develop
       <button type = "submit">Add</button>
-      </label>
       </form>
       </div>
     )
