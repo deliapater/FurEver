@@ -4,21 +4,20 @@ import Message from './Message';
 const MessageDetails = (props) => {
 
   if(!props.message){
-    return "Loading...."
+    return "loading...."
   }
 
   const handleDelete = () => {
     props.onDelete(props.message.id);
   }
 
-  const messages = props.owner.messages.map((message, index) => {
-    return <li key={index}>{message.title}</li>
-  })
+  // const messages = props.message.owner.map((message, index) => {
+  //   return <li key={index}>{message.title}</li>
+  // })
 
   return (
     <div className = "component">
-    <Message message = {props.message} />
-    <ul>{messages}</ul>
+    <Message message = {props.message.txtMessage} />
     <button onClick = {handleDelete}>Delete {props.message}</button>
     </div>
   )

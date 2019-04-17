@@ -2,6 +2,7 @@ import React from 'react';
 import Dog from './Dog';
 import Owner from '../owners/Owner';
 import CommentForm from './CommentForm';
+import Comment from './Comment';
 
 const DogDetails = (props) => {
 
@@ -9,13 +10,11 @@ const DogDetails = (props) => {
     return "loading....";
   }
 
-  const handleDelete = () => {
-    props.onDelete(props.dog.id);
-  }
- const newComments = props.dog.comments.map((dog, index) => {
-   return dog.text
- })
-
+ const newComments = props.dog.comments.map(comment => {
+       return (
+         <Comment key={comment.id}>{comment.text}</Comment>
+       )
+     })
  return (
 
     <div className="component">
@@ -24,13 +23,12 @@ const DogDetails = (props) => {
     <ul>Gender: {props.dog.gender}</ul>
     <ul>Description: {props.dog.description}</ul>
     <ul>Age: {props.dog.age}</ul>
-  <ul>Owner:</ul><Owner owner = {props.dog.owner}  />
+    <ul>Owner:</ul><Owner owner = {props.dog.owner}  />
     <p>Comments</p>
     <ul>
     <li>{newComments}</li>
     </ul>
-    <CommentForm />
-    <button onClick = {handleDelete}>Delete {props.dog.name}</button>
+    <CommentForm dogId={props.dog.id} dog={props.dog}/>
     </div>
   )
 
