@@ -13,7 +13,7 @@ function handleSelectChange(evt){
  }
 
  return (
-   <select onChange={handleSelectChange}>
+   <select name ="location" onChange={handleSelectChange}>
      {options}
    </select>
  )

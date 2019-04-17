@@ -29,10 +29,13 @@ class MainContainer extends Component {
     this.state = {
       owners: [],
       dogs: [],
+      filteredDogs: [],
       messages: [],
       comments: [],
       dog: null,
       ownersForLocation: [],
+      dogsForGender: [],
+      dogsForBreed: [],
       locations: []
 
     };
@@ -59,10 +62,10 @@ class MainContainer extends Component {
       this.setState({
         owners: data[0]._embedded.owners,
         dogs: data[1]._embedded.dogs,
+        filteredDogs: data[1]._embedded.dogs,
         messages: data[2]._embedded.messages,
         comments: data[3]._embedded.comments,
       }, this.filterLocation)
-
     })
 
   }
@@ -137,6 +140,17 @@ class MainContainer extends Component {
     this.setState({ownersForLocation: filteredOwners})
   }
 
+  handleGenderSelect(gender){
+    const filteredDogs = this.state.filteredDogs.filter(dog => dog.gender === gender)
+    this.setState({filteredDogs})
+  }
+
+  handleBreedSelect(breed){
+    const filteredDogs = this.state.filteredDogs.filter(dog => dog.breed === breed)
+    const uniqueBreeds = [...new Set(uniqueBreeds)]
+    this.setState({filteredDogs})
+  }
+
   render(){
     return (
       <div>
@@ -150,7 +164,7 @@ class MainContainer extends Component {
       }}/>
 
       <Route exact path="/dogs" render={(props) => {
-        return <DogList dogs = {this.state.dogs} />
+        return <DogList dogs = {this.state.filteredDogs} />
       }}/>
 
       <Route exact path = "/owners/new" render={(props) => {

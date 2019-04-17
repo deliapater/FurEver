@@ -5,8 +5,8 @@ const NavBar = (props) => {
   return(
     <header>
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo right">Fur Ever</a>
+      <div className="nav-wrapper">
+        <a href="/home" className="brand-logo right">Fur Ever</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li className="homeLink">
         <Link to="/home">Home</Link>

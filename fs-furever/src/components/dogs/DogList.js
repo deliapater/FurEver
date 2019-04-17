@@ -1,6 +1,6 @@
 import React from 'react';
 import Dog from './Dog.js';
-
+import FilterBar from './FilterBar';
 
 const DogList = (props) => {
   const dogs = props.dogs.map((dog) => {
@@ -11,9 +11,12 @@ const DogList = (props) => {
 })
 
 return (
+  <>
+  <FilterBar />
   <ul className="component-list">
   {dogs}
   </ul>
+  </>
 )
 }
 export default DogList;

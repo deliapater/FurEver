@@ -12,11 +12,7 @@ const Account = (props) => {
     return "Loading Account Page...."
   }
 
-  // console.log(props.owner);
-  // const url = `/message/${props.message.id}`;
-
   return(
-
     <div className="component">
     <MyDogsDetails dogs = {props.owner.dogs} />
     <MessageList messages = {props.owner.messages} />
