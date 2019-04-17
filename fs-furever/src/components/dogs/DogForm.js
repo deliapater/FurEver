@@ -71,7 +71,7 @@ class DogForm extends React.Component{
       }
 
       handleChange(event){
-      this.setState({text: event.target.value})
+      this.setState({[event.target.name]: event.target.value})
   }
 
 
@@ -108,17 +108,17 @@ render(){
   return (
       <div>
         <form onSubmit = {this.handleSubmit}>
-          <input type = "text" placeholder ="Name" name="name"/>
-          <select name="breed">
+          <input type = "text" placeholder ="Name" name="name" onChange={this.handleChange}/>
+          <select name = "breed" onChange={this.handleChange}>
             {breedSelect}
           </select>
-          <select name = "gender">
+          <select name = "gender" onChange={this.handleChange}>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
-          <input type = "number" placeholder ="Age" name="age"/>
-          <input type = "text" placeholder ="Picture" name="picture"/>
-          <input type = "text" placeholder ="Description" name="description"/>
+          <input type = "number" placeholder ="Age" name="age" onChange={this.handleChange}/>
+          <input type = "text" placeholder ="Picture" name="picture" onChange={this.handleChange}/>
+          <input type = "text" placeholder ="Description" name="description" onChange={this.handleChange}/>
           <button type = "submit">Save</button>
         </form>
       </div>
