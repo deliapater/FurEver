@@ -20,6 +20,7 @@ import Message from '../components/messages/Message';
 import MessageList from '../components/messages/MessageList';
 import MessageDetails from '../components/messages/MessageDetails';
 import Account from '../components/accounts/Account';
+import LocationSelect from '../components/dogs/LocationSelect';
 
 class MainContainer extends Component {
 
@@ -30,7 +31,10 @@ class MainContainer extends Component {
       dogs: [],
       messages: [],
       comments: [],
-      dog: null
+      dog: null,
+      ownersForLocation: [],
+      locations: []
+
     };
     this.findOwnerById = this.findOwnerById.bind(this);
     this.findDogById = this.findDogById.bind(this);
@@ -38,6 +42,7 @@ class MainContainer extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.findOwnerMessages = this.findOwnerMessages.bind(this);
     this.handleSubmitDog = this.handleSubmitDog.bind(this);
+    this.handleLocationSelect = this.handleLocationSelect.bind(this);
   }
 
   componentDidMount() {
@@ -56,8 +61,10 @@ class MainContainer extends Component {
         dogs: data[1]._embedded.dogs,
         messages: data[2]._embedded.messages,
         comments: data[3]._embedded.comments,
-      })
-    });
+      }, this.filterLocation)
+
+    })
+
   }
 
   findOwnerById(id) {
@@ -119,6 +126,17 @@ class MainContainer extends Component {
     })
   }
 
+  filterLocation(){
+    const locations = this.state.owners.map(owner => owner.location).filter(location => location !== "")
+    const uniqueLocations = [...new Set(locations)]
+    this.setState({locations: uniqueLocations})
+  }
+
+  handleLocationSelect(location){
+    const filteredOwners= this.state.owners.filter(owner => owner.location === location)
+    this.setState({ownersForLocation: filteredOwners})
+  }
+
   render(){
     return (
       <div>
@@ -174,6 +192,13 @@ class MainContainer extends Component {
         const dog = this.findDogById(id);
         return <DogDetails dog={dog} onClick={this.handleClick} />
       }}/>
+
+
+      <div>
+      <h1>Filter Search</h1>
+      <LocationSelect locations={this.state.locations} onLocationChange={this.handleLocationSelect}/>
+      <OwnerList owners={this.state.ownersForLocation} />
+      </div>
 
       </Switch>
       </React.Fragment>

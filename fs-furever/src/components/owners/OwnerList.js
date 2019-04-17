@@ -1,21 +1,22 @@
 import React from 'react';
 import Owner from './Owner';
 
-const OwnerList = (props) => {
+const OwnerList = ({owners}) => {
 
-	const owners = props.owners.map((owner, index) => {
-		return (
-			<li key={index} className="component_list">
-			<div className="component">
-			<Owner owner={owner}/>
-			</div>
-			</li>
-		)
-	})
+ if(owners.length === 0) return null;
+
+	// const owners = locations.map((owner, index) => {
+	// 	return (
+	// 		<li key={index} className="component_list">
+	// 		<div className="component">
+	// 		<Owner owner={owner.location}/>
+	// 		</div>
+	// 		</li>
+	// 	)
+	// })
 
 	return (
 		<ul className="component-list">
-		{owners}
 		</ul>
 	)
 }
