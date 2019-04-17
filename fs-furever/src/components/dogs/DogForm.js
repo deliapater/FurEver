@@ -13,6 +13,7 @@ class DogForm extends React.Component{
         age: 0,
         picture: "",
         description: "",
+        owners:"",
         breeds: [
             'Affen Pinscher',
             'Afghan Hound',
@@ -81,8 +82,8 @@ handleSubmit(event){
       "gender": event.target.gender.value,
       "picture":event.target.picture.value,
       "description": event.target.description.value,
+      "owner": "http://localhost:8080/api/owners/1",
       "breed": event.target.breed.value,
-      "owner": "http://localhost:8080/api/owners/1"
     }
     console.log(dog);
     this.props.handleSubmitDog(dog);
@@ -93,6 +94,12 @@ handleSubmit(event){
 
 
 render(){
+
+
+  // const ownerOptions = this.state.owners.map((owner, index) => {
+  //   return <option key={index} value={owner._links.self.href}>{owner.name}</option>
+  // })
+
 
   const breedSelect = this.state.breeds.map((breed, index) => {
     return <option key={index} value={breed}>{breed}</option>
