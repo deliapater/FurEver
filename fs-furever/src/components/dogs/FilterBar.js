@@ -32,7 +32,7 @@ const FilterBar = ({locations, breeds, handleBreedSelect, handleGenderSelect, ha
 
   return(
     <div>
-    <h5>Filter Search</h5>
+    <h3>Search</h3>
     <select name ="location" onChange={handleSelectLocationChange}>
     {selectLocations}
     </select>

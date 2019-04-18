@@ -8,11 +8,11 @@ const Dog = (props) => {
   const location = props.dog.owner ? <p className="location">{props.dog.owner.location}</p> : null
 
   return (
-    <div className="component">
+    <div className="dog-component">
     <Link to = {url} className="name">
     {props.dog.name}</Link>
 
-        <img src = {props.dog.picture} className="expand" alt="profile" height="30%" width="30%"/>
+        <img src = {props.dog.picture} className="expand" alt="profile"/>
         {location}
 
     </div>

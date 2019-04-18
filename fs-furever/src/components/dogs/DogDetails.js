@@ -17,7 +17,7 @@ const DogDetails = (props) => {
      })
  return (
 
-    <div className="component">
+    <div className="dog-info">
     <Dog dog = {props.dog}  />
     <ul>Breed: {props.dog.breed}</ul>
     <ul>Gender: {props.dog.gender}</ul>

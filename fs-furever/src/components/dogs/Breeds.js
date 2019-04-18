@@ -46,7 +46,7 @@ const breeds = [
     'Borzoi',
     'Boston Terrier',
     'Daschund',
-    'Ladrador',
+    'Labrador',
     'Bulldog',
     'Germen Sheperd',
     'Chihuaha']
