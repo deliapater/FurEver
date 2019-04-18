@@ -2,15 +2,24 @@ import React from 'react';
 import OwnerList from '../owners/OwnerList';
 
 
-const FilterBar = ({locations, breeds, gender, onOptionChange}) => {
+const FilterBar = ({locations, breeds, handleBreedSelect, handleGenderSelect, handleLocationSelect}) => {
 
   if(!locations) {
     return "Loading Search FIlter...."
   }
 
-  function handleSelectChange(evt){
-    onOptionChange(evt.target.value)
+  function handleSelectLocationChange(evt){
+    handleLocationSelect(evt.target.value)
   }
+
+  function handleSelectBreedChange(evt){
+    handleBreedSelect(evt.target.value)
+  }
+
+  function handleSelectGenderChange(evt){
+    handleGenderSelect(evt.target.value)
+  }
+
 
   const selectLocations = locations.map((location, index) => {
     return <option key={index} value={location}>{location}</option>
@@ -20,27 +29,26 @@ const FilterBar = ({locations, breeds, gender, onOptionChange}) => {
     return <option key={index} value={breed}>{breed}</option>
   })
 
-  const selectGender = gender.map((gender, index) => {
-    return <option key={index} value={gender}>{gender}</option>
-  })
 
   return(
     <div>
     <h5>Filter Search</h5>
-    <select name ="location" onChange={handleSelectChange}>
+    <select name ="location" onChange={handleSelectLocationChange}>
     {selectLocations}
     </select>
 
-    <select name ="breeds" onChange={handleSelectChange}>
+    <select name ="breeds" onChange={handleSelectBreedChange}>
     {selectBreeds}
     </select>
 
-    <select name ="gender" onChange={handleSelectChange}>
-    <option key="index" value="male">Male</option>
-    <option key="index" value="female">Female</option>
+    <select name ="gender" onChange ={handleSelectGenderChange}>
+    <option key="index" value="Male">Male</option>
+    <option key="index" value="Female">Female</option>
     </select>
     </div>
   )
 }
+
+
 
 export default FilterBar

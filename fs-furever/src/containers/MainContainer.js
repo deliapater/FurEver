@@ -36,7 +36,8 @@ class MainContainer extends Component {
       ownersForLocation: [],
       dogsForGender: [],
       dogsForBreed: [],
-      locations: []
+      locations: [],
+      uniqueBreeds: []
 
     };
     this.findOwnerById = this.findOwnerById.bind(this);
@@ -46,6 +47,10 @@ class MainContainer extends Component {
     this.findOwnerMessages = this.findOwnerMessages.bind(this);
     this.handleSubmitDog = this.handleSubmitDog.bind(this);
     this.handleLocationSelect = this.handleLocationSelect.bind(this);
+    this.generateBreeds = this.generateBreeds.bind(this);
+    this.handleBreedSelect = this.handleBreedSelect.bind(this);
+    this.handleGenderSelect = this.handleGenderSelect.bind(this);
+
   }
 
   componentDidMount() {
@@ -65,7 +70,10 @@ class MainContainer extends Component {
         filteredDogs: data[1]._embedded.dogs,
         messages: data[2]._embedded.messages,
         comments: data[3]._embedded.comments,
-      }, this.filterLocation)
+      }, () => {
+        this.filterLocation();
+        this.generateBreeds();
+      })
     })
 
   }
@@ -130,14 +138,20 @@ class MainContainer extends Component {
   }
 
   filterLocation(){
-    const locations = this.state.owners.map(owner => owner.location).filter(location => location !== "")
+    const locations = this.state.dogs.map(dog => dog.owner.location).filter(location => location !== "")
     const uniqueLocations = [...new Set(locations)]
     this.setState({locations: uniqueLocations})
   }
 
+  generateBreeds(){
+    const breeds = this.state.dogs.map(dog => dog.breed);
+    const uniqueBreeds = [...new Set(breeds)];
+    this.setState({uniqueBreeds});
+  }
+
   handleLocationSelect(location){
-    const filteredOwners= this.state.owners.filter(owner => owner.location === location)
-    this.setState({ownersForLocation: filteredOwners})
+    const filteredDogs= this.state.dogs.filter(dog => dog.owner.location === location)
+    this.setState({filteredDogs})
   }
 
   handleGenderSelect(gender){
@@ -164,7 +178,15 @@ class MainContainer extends Component {
       }}/>
 
       <Route exact path="/dogs" render={(props) => {
-        return <DogList dogs = {this.state.filteredDogs} />
+        return <DogList dogs = {this.state.filteredDogs}
+                        locations ={this.state.locations}
+                        breeds = {this.state.uniqueBreeds}
+                        handleGenderSelect = {this.handleGenderSelect}
+                        handleBreedSelect = {this.handleBreedSelect}
+                        handleLocationSelect = {this.handleLocationSelect}
+                        generateBreeds = {this.generateBreeds}
+
+                      />
       }}/>
 
       <Route exact path = "/owners/new" render={(props) => {
