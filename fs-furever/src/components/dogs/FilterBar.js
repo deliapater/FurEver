@@ -31,16 +31,19 @@ const FilterBar = ({locations, breeds, handleBreedSelect, handleGenderSelect, ha
 
 
   return(
-    <div>
+    <div className="drop-down">
     <h3>Search</h3>
-    <select name ="location" onChange={handleSelectLocationChange}>
+    <legend className="legend">Location</legend>
+    <select name ="location" onChange={handleSelectLocationChange} id="search_categories">
     {selectLocations}
     </select>
 
+    <legend className="legend">Breed</legend>
     <select name ="breeds" onChange={handleSelectBreedChange}>
     {selectBreeds}
     </select>
 
+    <legend className="legend">Gender</legend>
     <select name ="gender" onChange ={handleSelectGenderChange}>
     <option key="index" value="Male">Male</option>
     <option key="index" value="Female">Female</option>

@@ -99,3 +99,20 @@ a:link {
   text-shadow: 4px 4px #DCDCDC;
 
 }
+
+ .drop-down{
+   display: inline-block;
+   flex-wrap: wrap;
+   margin-left: 180px;
+   padding: 20px;
+   border-radius: 5%;
+   border: 3px solid #DCDCDC;
+}
+
+.legend {
+  margin-bottom: 8px;
+  margin-top: 15px;
+  margin-right: 80px;
+  text-shadow: 2px 2px #DCDCDC;
+
+}
