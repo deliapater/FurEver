@@ -32,7 +32,7 @@ const MyDogsDetails = (props) => {
     <div className="my-dogs">
     {dogObjectArray}
     </div>
-    <div>
+    <div className="my-dogs-btn">
       <button type="submit" onClick={handleClickAdd}>Add Dog</button>
     </div>
 

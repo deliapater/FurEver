@@ -6,6 +6,7 @@ font-family: 'Raleway', sans-serif;
 .dog-container, .my-dogs {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-wrapper ul {
@@ -157,8 +158,6 @@ a:link {
  }
 
 
-
-
  /*my account*/
  .dog-info2 {
    display: flex;
@@ -167,4 +166,9 @@ a:link {
    padding: 10px;
    border-radius: 5%;
    box-shadow: 3px 3px 3px 3px #888888;
+
+}
+
+.my-dogs-btn {
+  margin-left: 1300px;
 }
