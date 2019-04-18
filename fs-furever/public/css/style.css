@@ -107,6 +107,8 @@ a:link {
    padding: 20px;
    border-radius: 5%;
    border: 3px solid #DCDCDC;
+   text-shadow: 2px 2px #DCDCDC;
+
 }
 
 .legend {
@@ -116,3 +118,28 @@ a:link {
   text-shadow: 2px 2px #DCDCDC;
 
 }
+
+.dog-info3 {
+  margin-left: 800px;
+  margin-top: -300px;
+  font-size: 20px;
+  text-shadow: 2px 2px #DCDCDC;
+
+}
+
+.dog-info4 {
+  margin-left: 200px;
+  margin-top: 200px;
+  font-size: 20px;
+  text-shadow: 2px 2px #DCDCDC;
+
+}
+
+
+ /*my account*/
+/* .dog-info2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 800px
+} */

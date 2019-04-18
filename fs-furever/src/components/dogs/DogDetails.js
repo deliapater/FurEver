@@ -19,17 +19,22 @@ const DogDetails = (props) => {
 
     <div className="dog-info">
     <Dog dog = {props.dog}  />
+    <div className="dog-info3">
     <ul>Breed: {props.dog.breed}</ul>
     <ul>Gender: {props.dog.gender}</ul>
     <ul>Description: {props.dog.description}</ul>
     <ul>Age: {props.dog.age}</ul>
-    <ul>Owner:</ul><Owner owner = {props.dog.owner}  />
+    </div>
+    <div className="dog-info4">
+    <button>Contact Owner</button>
     <p>Comments</p>
     <ul>
     <li>{newComments}</li>
     </ul>
     <CommentForm dogId={props.dog.id} dog={props.dog}/>
     </div>
+    </div>
+
   )
 
 }
