@@ -6,7 +6,6 @@ const NavBar = (props) => {
     <header>
     <nav>
       <div className="nav-wrapper">
-        <a href="/home" className="brand-logo right">Fur Ever</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li className="homeLink">
         <Link to="/home">Home</Link>
@@ -23,6 +22,7 @@ const NavBar = (props) => {
         </ul>
       </div>
     </nav>
+    <h1 className="logo"> FUR EVER </h1>
     </header>
   )
 }

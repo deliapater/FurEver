@@ -54,6 +54,15 @@ img.expand {
   width: 30em;
 }
 
+img.expand-home {
+  width: 50em;
+  margin-left: 350px;
+  border: 5px solid #DCDCDC;
+  border-radius: 3%;
+
+
+}
+
 .name {
   font-size: 40px;
   color: #ef9a9a;
@@ -67,7 +76,26 @@ a:link {
   color: grey;
 }
 
-
  a:active {
   color: #ef9a9a;
+}
+
+
+.nav-wrapper .logo {
+  justify-content: left;
+}
+
+.home-component {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  text-shadow: 3px 3px #DCDCDC;
+}
+
+.logo {
+  font-size: 50px;
+  margin-left: 650px;
+  text-shadow: 4px 4px #DCDCDC;
+
 }
