@@ -28,14 +28,15 @@ const MyDogsDetails = (props) => {
   })
 
   return(
-
-    <div>
-      <React.Fragment>
+<div>
+    <div className="my-dogs">
     {dogObjectArray}
+    </div>
+    <div>
       <button type="submit" onClick={handleClickAdd}>Add Dog</button>
-    </React.Fragment>
     </div>
 
+    </div>
 
   )
 
