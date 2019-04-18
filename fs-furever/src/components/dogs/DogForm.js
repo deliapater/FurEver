@@ -13,6 +13,7 @@ class DogForm extends React.Component{
         age: 0,
         picture: "",
         description: "",
+        owners:"",
         breeds: [
             'Affen Pinscher',
             'Afghan Hound',
@@ -70,7 +71,7 @@ class DogForm extends React.Component{
       }
 
       handleChange(event){
-      this.setState({text: event.target.value})
+      this.setState({[event.target.name]: event.target.value})
   }
 
 
@@ -81,8 +82,8 @@ handleSubmit(event){
       "gender": event.target.gender.value,
       "picture":event.target.picture.value,
       "description": event.target.description.value,
+      "owner": "http://localhost:8080/api/owners/1",
       "breed": event.target.breed.value,
-      "owner": "http://localhost:8080/api/owners/1"
     }
     console.log(dog);
     this.props.handleSubmitDog(dog);
@@ -94,24 +95,32 @@ handleSubmit(event){
 
 render(){
 
+
+  // const ownerOptions = this.state.owners.map((owner, index) => {
+  //   return <option key={index} value={owner._links.self.href}>{owner.name}</option>
+  // })
+
+
   const breedSelect = this.state.breeds.map((breed, index) => {
     return <option key={index} value={breed}>{breed}</option>
   })
 
+
+
   return (
-      <div>
+      <div className = "dog-form">
         <form onSubmit = {this.handleSubmit}>
-          <input type = "text" placeholder ="Name" name="name"/>
-          <select name="breed">
+          <input type = "text" placeholder ="Name" name="name" onChange={this.handleChange}/>
+          <select name = "breed" onChange={this.handleChange}>
             {breedSelect}
           </select>
-          <select name = "gender">
+          <select name = "gender" onChange={this.handleChange}>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
-          <input type = "number" placeholder ="Age" name="age"/>
-          <input type = "text" placeholder ="Picture" name="picture"/>
-          <input type = "text" placeholder ="Description" name="description"/>
+          <input type = "number" placeholder ="Age" name="age" onChange={this.handleChange}/>
+          <input type = "text" placeholder ="Picture" name="picture" onChange={this.handleChange}/>
+          <input type = "text" placeholder ="Description" name="description" onChange={this.handleChange}/>
           <button type = "submit">Save</button>
         </form>
       </div>
