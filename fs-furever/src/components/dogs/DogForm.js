@@ -105,8 +105,10 @@ render(){
     return <option key={index} value={breed}>{breed}</option>
   })
 
+
+
   return (
-      <div>
+      <div className = "dog-form">
         <form onSubmit = {this.handleSubmit}>
           <input type = "text" placeholder ="Name" name="name" onChange={this.handleChange}/>
           <select name = "breed" onChange={this.handleChange}>
