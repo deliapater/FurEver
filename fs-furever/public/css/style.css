@@ -172,3 +172,10 @@ a:link {
 .my-dogs-btn {
   margin-left: 1300px;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 10px;
+}
