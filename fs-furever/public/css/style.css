@@ -128,12 +128,34 @@ a:link {
 }
 
 .dog-info4 {
-  margin-left: 200px;
-  margin-top: 200px;
+  margin-left: 100px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   font-size: 20px;
   text-shadow: 2px 2px #DCDCDC;
 
 }
+
+#contact{
+  margin-left: 1300px;
+  margin-top: 50px;
+  border:1px solid #ef5350;
+  border-radius: 2%;
+  padding: 6px 8px;
+  color: black;
+  cursor:pointer;
+  border-radius: 5%;
+}
+
+ button {
+   border:1px  solid #ef5350;
+   padding: 6px 8px;
+   color: black;
+   cursor:pointer;
+   background-color: #ef9a9a;
+   border-radius: 5%;
+ }
+
 
 
  /*my account*/

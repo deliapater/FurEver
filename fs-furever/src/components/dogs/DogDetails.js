@@ -25,8 +25,10 @@ const DogDetails = (props) => {
     <ul>Description: {props.dog.description}</ul>
     <ul>Age: {props.dog.age}</ul>
     </div>
+    <div className="container">
+    <button id="contact">Contact Owner</button>
+    </div>
     <div className="dog-info4">
-    <button>Contact Owner</button>
     <p>Comments</p>
     <ul>
     <li>{newComments}</li>
@@ -34,6 +36,8 @@ const DogDetails = (props) => {
     <CommentForm dogId={props.dog.id} dog={props.dog}/>
     </div>
     </div>
+
+
 
   )
 
