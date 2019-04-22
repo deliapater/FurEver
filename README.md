@@ -21,13 +21,10 @@ User must be able to filter for other dogs and filter results based on preferenc
 	Gender
 	Age
 
-Users must be able to contact each other privately via a direct message.
-
 Users must be able to add a public comment in others users(pets) walls.
 
 ## Extensions
 Add a location map.<br>
+Users could be able to contact each other privately via a direct message.<br>
 Add a method that allows the user to upload photos to the server.<br>
-Add an Adoptable Dogs section.<br>
-The newest members(dogs) could be display in the home page carousel.<br>
 Extended for pets of any type.<br>
