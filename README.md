@@ -41,3 +41,4 @@ Extended for pets of any type.<br>
 <img width="1435" alt="Screenshot 2019-05-11 at 21 28 00" src="https://user-images.githubusercontent.com/45568630/57574657-ef189d80-7434-11e9-8c94-3bdfdacaa806.png">
 
 ## Installation instructions
+[Client](./fs-furever/README.md)
