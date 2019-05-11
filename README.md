@@ -28,3 +28,13 @@ Add a location map.<br>
 Users could be able to contact each other privately via a direct message.<br>
 Add a method that allows the user to upload photos to the server.<br>
 Extended for pets of any type.<br>
+
+## Screen Grabs
+
+<img width="1432" alt="Screenshot 2019-05-11 at 21 26 04" src="https://user-images.githubusercontent.com/45568630/57574652-d314fc00-7434-11e9-9164-c21304577c46.png">
+
+<img width="1406" alt="Screenshot 2019-05-11 at 21 27 05" src="https://user-images.githubusercontent.com/45568630/57574653-e0ca8180-7434-11e9-8088-7afc55d10452.png">
+
+<img width="1435" alt="Screenshot 2019-05-11 at 21 28 00" src="https://user-images.githubusercontent.com/45568630/57574657-ef189d80-7434-11e9-8c94-3bdfdacaa806.png">
+
+## Installation instructions
