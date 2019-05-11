@@ -31,10 +31,13 @@ Extended for pets of any type.<br>
 
 ## Screen Grabs
 
+### Home Page
 <img width="1432" alt="Screenshot 2019-05-11 at 21 26 04" src="https://user-images.githubusercontent.com/45568630/57574652-d314fc00-7434-11e9-9164-c21304577c46.png">
 
+### Search
 <img width="1406" alt="Screenshot 2019-05-11 at 21 27 05" src="https://user-images.githubusercontent.com/45568630/57574653-e0ca8180-7434-11e9-8088-7afc55d10452.png">
 
+### My Account
 <img width="1435" alt="Screenshot 2019-05-11 at 21 28 00" src="https://user-images.githubusercontent.com/45568630/57574657-ef189d80-7434-11e9-8c94-3bdfdacaa806.png">
 
 ## Installation instructions
